@@ -12,7 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomepageLayout />} />
+        <Route path="/reeltalk" element={<HomepageLayout />} />
       </Routes>
     </BrowserRouter>
   );
