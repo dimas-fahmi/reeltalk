@@ -1,0 +1,78 @@
+/* Cards Stylesheet */
+
+.cards {
+  min-height: 315px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  gap: 12px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.cards .card {
+  position: relative;
+  min-width: 222px;
+  max-width: 222px;
+  min-height: 305px;
+  max-height: 305px;
+  border-radius: 0;
+  box-sizing: content-box;
+  border: 0;
+  cursor: pointer;
+  background-color: #ddd;
+
+  & .backdrop {
+    min-width: 222px;
+    max-width: 222px;
+    min-height: 305px;
+    max-height: 305px;
+  }
+
+  & img {
+    min-width: 222px;
+    max-width: 222px;
+    min-height: 305px;
+    max-height: 305px;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.25s;
+    filter: brightness(0.7);
+  }
+
+  & .backdrop::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, transparent 56%, #000 80%);
+    z-index: 1;
+  }
+
+  & .body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    z-index: 2;
+  }
+
+  & .body small {
+    opacity: 0.5;
+    font-size: 11px;
+  }
+
+  & .body h4 {
+    font-size: 17px;
+  }
+}
+
+.cards .card:hover img {
+  filter: brightness(1);
+}
