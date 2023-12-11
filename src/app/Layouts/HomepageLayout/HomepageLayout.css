@@ -8,7 +8,7 @@ div#homepage.homepage {
   & section#hero {
     margin-top: 4.5rem;
     max-width: 1080px;
-    height: 480px;
+    min-height: 480px;
     display: grid;
     grid-template-areas:
       "first second third"
@@ -105,11 +105,13 @@ div#homepage.homepage {
 
 @media screen and (max-width: 768px) {
   div#homepage.homepage section#hero {
-    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
-
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-rows: 0.5fr 0.5fr;
     grid-template-areas:
-      "first first third third"
-      "second second fourth fourth";
+      "first second"
+      "first second"
+      "third fourth"
+      "third fourth";
 
     & h4 {
       font-size: 14px;
@@ -119,6 +121,9 @@ div#homepage.homepage {
 
 @media screen and (max-width: 576px) {
   div#homepage.homepage section#hero {
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-rows: 0.5fr 0.4fr;
+
     & div.body {
       padding: 0 !important;
     }

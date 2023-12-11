@@ -4,6 +4,7 @@ import feature_posts from "../../../data/feature_posts.json";
 import Cards from "../../Components/Cards/Cards";
 import Card from "../../Components/Cards/Fragments/Card";
 import "./HomepageLayout.css";
+import RT_Carousel from "../../Components/RTCarousel/RT_Carousel";
 
 const HomepageLayout = () => {
   // Variable Initialization
@@ -16,6 +17,7 @@ const HomepageLayout = () => {
       {/* Navigation Bar */}
       <NavBar />
       <div id="homepage" className="homepage">
+        <RT_Carousel array={trending_tv_placeholder["results"]} />
         {/* Homepage [hero] */}
         <section id="hero">
           {feature_posts["posts"] &&
