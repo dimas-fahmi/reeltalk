@@ -1,6 +1,7 @@
 /* Application Main Stylesheet : Layout, Modules, Web Configurations */
 
 body {
+  min-height: 4800px;
   background-color: #1a1d24 !important;
 }
 

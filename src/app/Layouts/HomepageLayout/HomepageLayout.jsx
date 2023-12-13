@@ -19,6 +19,44 @@ const HomepageLayout = () => {
       <div id="homepage" className="homepage">
         <RT_Carousel array={trending_tv_placeholder["results"]} />
         {/* Homepage [hero] */}
+        <section id="pre-hero">
+          <div className="backdrop">
+            <img src="public\samurai-nobg.png" alt="Samurai" />
+          </div>
+          <div className="backdrop-detail text-light">
+            <div className="pe-4">
+              <span className="interline-separator d-none">
+                <hr />
+              </span>
+              <span className="first-headlihe-label roboto fw-bold">
+                MY FAVORITE
+              </span>
+              <h4 className="rubik m-0 mt-4">THE BEST MOVIE OF ALL TIME</h4>
+              <span className="second-label mt-2 mb-2 d-block rubik">
+                MOVIES · SERIES · GAMES
+              </span>
+              <p className="quicksand">
+                In this comprehensive article, the focus is on exploring the
+                diverse realm of entertainment that captures my heart. From
+                captivating movies that transport viewers to different worlds,
+                to engaging series that unfold intricate narratives, and
+                riveting video games that provide immersive experiences.{" "}
+              </p>
+              <a
+                href="#"
+                className="btn btn-danger quicksand text-decoration-none me-4"
+              >
+                <i className="bi bi-arrow-right me-2"></i> Read More
+              </a>
+              <a
+                href="#hero"
+                className="quicksand btn btn-secondary text-decoration-none"
+              >
+                <i className="bi bi-play-circle-fill"></i> Next Section
+              </a>
+            </div>
+          </div>
+        </section>
         <section id="hero">
           {feature_posts["posts"] &&
             feature_posts["posts"].map((item, index) => (

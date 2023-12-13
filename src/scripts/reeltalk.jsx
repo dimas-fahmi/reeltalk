@@ -46,7 +46,6 @@ export const dragToScroll = () => {
           const x = e.pageX - slider.offsetLeft;
           const walk = (x - startX) * 1;
           slider.scrollLeft = scrollLeft - walk;
-          console.log(walk);
         });
       });
     });

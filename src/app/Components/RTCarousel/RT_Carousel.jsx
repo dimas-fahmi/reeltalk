@@ -1,10 +1,11 @@
 import Carousel from "react-bootstrap/Carousel";
 import "./RT_Carousel.css";
+import { get_genre } from "../../../hooks/TMDB";
 
 function RT_Carousel({ array = [] }) {
   if (array.length < 1) return;
 
-  const items = array.slice(0, 3);
+  const items = array.slice(1, 4);
 
   console.log(items);
 
@@ -20,22 +21,23 @@ function RT_Carousel({ array = [] }) {
                   alt={"backdrop of " + item.name}
                 />
               </div>
-              <div className="caption d-flex align-items-center justify-content-center text-light text-center">
+              <div className="caption d-flex align-items-end text-light">
                 <div>
-                  <img
-                    src={"https://image.tmdb.org/t/p/w154" + item.poster_path}
-                    alt={"poster of " + item.name}
-                    className="poster mb-3"
-                  />
-                  <h4 className="rubik">{item.name}</h4>
-                  <p className="quicksand px-4">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
-                    deserunt quo quasi at sequi perspiciatis corrupti fugiat
-                    possimus.
+                  <h1 className="rubik m-0">{item.name}</h1>
+                  <p className="oswald m-0 mb-4">
+                    <small>{get_genre("tv", item.genre_ids.slice(0, 1))}</small>
                   </p>
-                  <button className="btn glass-morphism text-light px-4 py-2 rounded-3">
-                    Play
-                  </button>
+                  <a href="#" className="text-light text-decoration-none">
+                    <i className="bi bi-arrow-right-circle-fill me-2"></i>More
+                    Information
+                  </a>
+                  <a
+                    href={"https://pahe.me/?s=" + item.name}
+                    target="blank"
+                    className="text-light text-decoration-none ms-3"
+                  >
+                    <i className="bi bi-download me-2"></i>Pahe
+                  </a>
                 </div>
               </div>
             </Carousel.Item>
