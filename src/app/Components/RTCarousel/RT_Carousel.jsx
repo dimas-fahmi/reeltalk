@@ -5,7 +5,7 @@ import { get_genre } from "../../../hooks/TMDB";
 function RT_Carousel({ array = [] }) {
   if (array.length < 1) return;
 
-  const items = array.slice(1, 4);
+  const items = array.slice(1, 9);
 
   console.log(items);
 
