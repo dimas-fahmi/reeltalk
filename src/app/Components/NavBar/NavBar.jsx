@@ -1,24 +1,46 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
+import "./NavBar.css";
 
-function NavBar({ navCol }) {
+function NavBar() {
   // Variable Initializations
   const [menuShow, setMenuShow] = useState(false);
+  const [navTransparent, setNavTransparent] = useState(true);
 
   // Logics
   const menuShowHandler = () => setMenuShow(true);
   const menuCloseHandler = () => setMenuShow(false);
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (scrollY === 0) {
+        setNavTransparent(true);
+      } else {
+        setNavTransparent(false);
+      }
+    });
+  }, []);
+
   // Component Rendering
   return (
     <>
-      <Navbar expand="sm" className={"navbar-dark fixed-top " + navCol}>
+      <Navbar
+        expand="sm"
+        className={
+          "fixed-top  navbar-dark text-light p-0 " +
+          (navTransparent ? "bg-none" : "bg-dark")
+        }
+      >
         <Container>
-          <Navbar.Brand href="/" className="quicksand">
-            ReelTalk
+          <Navbar.Brand href="/" className="quicksand m-auto">
+            <img
+              className="navbar-reeltalk-logo"
+              src="/reeltalk/resources/logos/reeltalk-1-nobg.svg"
+              alt="ReelTalk Logo"
+            />
           </Navbar.Brand>
           <button
-            className="btn bg-none border-0 text-light d-xs-none d-sm-none d-md-none"
+            className="btn bg-none border-0 d-xs-none text-light d-sm-none d-md-none"
             onClick={menuShowHandler}
           >
             <i className="bi bi-list"></i>
@@ -40,14 +62,18 @@ function NavBar({ navCol }) {
               <Nav.Link className="oswald me-4" href="/contacts">
                 Contacts
               </Nav.Link>
-              <div className="d-md-none d-lg-block"></div>
+              <div className="d-flex opacity-half align-items-center me-3">
+                |
+              </div>
               <Nav.Link className="oswald " href="/contacts">
                 <i className="bi bi-search"></i>
               </Nav.Link>
               <Nav.Link className="oswald " href="#" onClick={menuShowHandler}>
                 <i className="bi bi-list"></i>
               </Nav.Link>
-              <div className="d-flex align-items-center me-4">|</div>
+              <div className="d-flex opacity-half align-items-center mx-4 d-sm-none d-md-flex">
+                |
+              </div>
               <Nav.Link
                 className="oswald d-sm-none d-md-block"
                 href="/contacts"
@@ -76,14 +102,11 @@ function NavBar({ navCol }) {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Offcanvas show={menuShow} onHide={menuCloseHandler}>
+      <Offcanvas show={menuShow} onHide={menuCloseHandler} data-bs-theme="dark">
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          <Offcanvas.Title>Menu</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
-        </Offcanvas.Body>
+        <Offcanvas.Body>Still On Construction.</Offcanvas.Body>
       </Offcanvas>
     </>
   );

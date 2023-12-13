@@ -11,7 +11,7 @@ function RT_Carousel({ array = [] }) {
 
   return (
     <div className="rt-carousel-container">
-      <Carousel className="rt-carousel">
+      <Carousel className="rt-carousel" data-bs-theme="light">
         {items &&
           items.map((item, index) => (
             <Carousel.Item key={index}>
@@ -19,6 +19,7 @@ function RT_Carousel({ array = [] }) {
                 <img
                   src={"https://image.tmdb.org/t/p/w1280" + item.backdrop_path}
                   alt={"backdrop of " + item.name}
+                  loading="lazy"
                 />
               </div>
               <div className="caption d-flex align-items-end text-light">

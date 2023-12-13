@@ -17,7 +17,8 @@
   max-width: 222px;
   min-height: 305px;
   max-height: 305px;
-  border-radius: 0;
+  border-radius: 8px;
+  overflow: hidden;
   box-sizing: content-box;
   border: 0;
   cursor: pointer;

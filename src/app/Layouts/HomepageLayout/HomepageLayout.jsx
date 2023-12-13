@@ -17,7 +17,32 @@ const HomepageLayout = () => {
       {/* Navigation Bar */}
       <NavBar />
       <div id="homepage" className="homepage">
-        <RT_Carousel array={trending_tv_placeholder["results"]} />
+        <section id="main-hero">
+          <div className="backdrop">
+            <img
+              src="https://www.themoviedb.org/t/p/original/BtUB5ZDu6sc2vNbXFPXTqbD7kv.jpg"
+              alt="Backdrop of Wonka"
+            />
+          </div>
+          <div className="content-dekstop">
+            <div>
+              {/* <img
+                className="reeltalk-logo d-block m-auto mb-4"
+                src="/reeltalk/resources/logos/reeltalk-1-nobg.svg"
+                alt="Reeltalk Logo"
+              /> */}
+              <h1 className="eb-garamond text-light text-center">
+                WONDER WOMAN
+              </h1>
+              <span className="text-warning oswald text-center d-block m-auto">
+                JUSTICE STARTED NOW
+              </span>
+              <button className="glass-morphism px-4 py-2 d-block m-auto mt-4 text-light">
+                More
+              </button>
+            </div>
+          </div>
+        </section>
         {/* Homepage [hero] */}
         <section id="pre-hero">
           <div className="backdrop">
@@ -87,9 +112,9 @@ const HomepageLayout = () => {
             ))}
         </section>
         {/* Homepage [trending] */}
-        <section id="trending" className="mt-4">
+        <section id="trending" className="mockingjay mt-4 p-4 text-light px-2">
           <div className="px-2">
-            <h4 className="text-light rubik border-start border-4 border-warning ps-2 mb-3">
+            <h4 className="rubik border-start border-4 border-warning ps-2 mb-3">
               Trending Movies
             </h4>
           </div>
@@ -108,10 +133,10 @@ const HomepageLayout = () => {
           </Cards>
         </section>
         {/* Homepage [upcoming] */}
-        <section id="trending" className="mt-4">
+        <section id="trending" className="mockingjay mt-4 p-4 px-2">
           <div className="px-2">
             <h4 className="text-light rubik border-start border-4 border-warning ps-2 mb-3">
-              Upcoming and Just Released
+              Just Released
             </h4>
           </div>
           <Cards>
@@ -129,7 +154,7 @@ const HomepageLayout = () => {
           </Cards>
         </section>
         {/* Homepage [TV Trending] */}
-        <section id="trending" className="mt-4">
+        <section id="trending" className="mockingjay mt-4 p-4 px-2">
           <div className="px-2">
             <h4 className="text-light rubik border-start border-4 border-warning ps-2 mb-3">
               Series Popular

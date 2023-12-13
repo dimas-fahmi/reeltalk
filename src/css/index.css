@@ -3,3 +3,7 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none !important;
 }
+
+.opacity-half {
+  opacity: 0.5;
+}
