@@ -21,7 +21,7 @@ const HomepageLayout = () => {
         {/* Homepage [hero] */}
         <section id="pre-hero">
           <div className="backdrop">
-            <img src="/samurai-nobg.png" alt="Samurai" />
+            <img src="/reeltalk/samurai-nobg.png" alt="Samurai" />
           </div>
           <div className="backdrop-detail text-light">
             <div className="pe-4">
