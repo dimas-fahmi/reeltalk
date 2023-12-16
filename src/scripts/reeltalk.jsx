@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const element_observer = (selector) => {
   return new Promise((resolve) => {
@@ -18,6 +18,30 @@ export const element_observer = (selector) => {
       subtree: true,
     });
   });
+};
+
+export const scrollDetector = () => {
+  const [scrollDirection, setScrollDirection] = useState("up");
+
+  useEffect(() => {
+    let lastScrollTop = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollTop = window.scrollY;
+      const isScrollingUp = currentScrollTop < lastScrollTop;
+
+      setScrollDirection(isScrollingUp ? "up" : "down");
+      lastScrollTop = currentScrollTop;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return scrollDirection;
 };
 
 export const dragToScroll = () => {

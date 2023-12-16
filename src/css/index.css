@@ -7,3 +7,7 @@
 .opacity-half {
   opacity: 0.5;
 }
+
+.w-fit-content {
+  width: fit-content !important;
+}

@@ -1,3 +1,16 @@
+.main-navbar {
+  opacity: 1;
+  transition: 0.25s;
+}
+
+.main-navbar.navbar-downed {
+  opacity: 0;
+}
+
 .navbar-reeltalk-logo {
   max-width: 75px;
+}
+
+.nav-bg-main {
+  background-color: rgb(26, 29, 36);
 }

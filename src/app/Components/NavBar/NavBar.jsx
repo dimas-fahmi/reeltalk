@@ -27,8 +27,8 @@ function NavBar() {
       <Navbar
         expand="sm"
         className={
-          "fixed-top  navbar-dark text-light p-0 " +
-          (navTransparent ? "bg-none" : "bg-dark")
+          "main-navbar fixed-top  navbar-dark text-light p-0 " +
+          (navTransparent ? "bg-none " : "nav-bg-main ")
         }
       >
         <Container>
