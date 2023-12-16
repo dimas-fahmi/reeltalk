@@ -117,28 +117,29 @@ const HomepageLayout = () => {
           <RT_Card_Detail>
             {upcoming_placeholder["results"] &&
               upcoming_placeholder["results"].map((item, index) => (
-                <>
-                  <div
-                    key={index}
-                    onClick={() => cardErectionHandler(index, "upcoming")}
-                  >
-                    <RT_Card_Detail_Card
-                      className={
-                        index === cardErected && "upcoming" === cardGroup
-                          ? "erected"
-                          : ""
-                      }
-                      title={item.title}
-                      backdrop={
-                        "https://image.tmdb.org/t/p/w300" + item.backdrop_path
-                      }
-                      poster={
-                        "https://image.tmdb.org/t/p/w185" + item.poster_path
-                      }
-                      genre={get_genre("movie", item.genre_ids, 3)}
-                    />
-                  </div>
-                </>
+                <div
+                  key={index}
+                  onClick={() => cardErectionHandler(index, "upcoming")}
+                >
+                  <RT_Card_Detail_Card
+                    className={
+                      index === cardErected && "upcoming" === cardGroup
+                        ? "erected"
+                        : ""
+                    }
+                    title={item.title}
+                    backdrop={
+                      "https://image.tmdb.org/t/p/w300" + item.backdrop_path
+                    }
+                    poster={
+                      "https://image.tmdb.org/t/p/w185" + item.poster_path
+                    }
+                    genre={get_genre("movie", item.genre_ids, 3)}
+                    id={item.id}
+                    mediaType="movie"
+                    date={item.release_date}
+                  />
+                </div>
               ))}
           </RT_Card_Detail>
         </section>
@@ -151,28 +152,29 @@ const HomepageLayout = () => {
           <RT_Card_Detail>
             {trending_placeholder["results"] &&
               trending_placeholder["results"].map((item, index) => (
-                <>
-                  <div
-                    key={index}
-                    onClick={() => cardErectionHandler(index, "popularMovies")}
-                  >
-                    <RT_Card_Detail_Card
-                      className={
-                        index === cardErected && "popularMovies" === cardGroup
-                          ? "erected"
-                          : ""
-                      }
-                      title={item.title}
-                      backdrop={
-                        "https://image.tmdb.org/t/p/w185" + item.backdrop_path
-                      }
-                      poster={
-                        "https://image.tmdb.org/t/p/w300" + item.poster_path
-                      }
-                      genre={get_genre("movie", item.genre_ids, 3)}
-                    />
-                  </div>
-                </>
+                <div
+                  key={index}
+                  onClick={() => cardErectionHandler(index, "popularMovies")}
+                >
+                  <RT_Card_Detail_Card
+                    className={
+                      index === cardErected && "popularMovies" === cardGroup
+                        ? "erected"
+                        : ""
+                    }
+                    title={item.title}
+                    backdrop={
+                      "https://image.tmdb.org/t/p/w185" + item.backdrop_path
+                    }
+                    poster={
+                      "https://image.tmdb.org/t/p/w300" + item.poster_path
+                    }
+                    genre={get_genre("movie", item.genre_ids, 3)}
+                    id={item.id}
+                    mediaType="movie"
+                    date={item.release_date}
+                  />
+                </div>
               ))}
           </RT_Card_Detail>
         </section>
@@ -185,28 +187,29 @@ const HomepageLayout = () => {
           <RT_Card_Detail>
             {trending_tv_placeholder["results"] &&
               trending_tv_placeholder["results"].map((item, index) => (
-                <>
-                  <div
-                    key={index}
-                    onClick={() => cardErectionHandler(index, "popularSeries")}
-                  >
-                    <RT_Card_Detail_Card
-                      className={
-                        index === cardErected && "popularSeries" === cardGroup
-                          ? "erected"
-                          : ""
-                      }
-                      title={item.name}
-                      backdrop={
-                        "https://image.tmdb.org/t/p/w185" + item.backdrop_path
-                      }
-                      poster={
-                        "https://image.tmdb.org/t/p/w300" + item.poster_path
-                      }
-                      genre={get_genre("tv", item.genre_ids, 3)}
-                    />
-                  </div>
-                </>
+                <div
+                  key={index}
+                  onClick={() => cardErectionHandler(index, "popularSeries")}
+                >
+                  <RT_Card_Detail_Card
+                    className={
+                      index === cardErected && "popularSeries" === cardGroup
+                        ? "erected"
+                        : ""
+                    }
+                    title={item.name}
+                    backdrop={
+                      "https://image.tmdb.org/t/p/w185" + item.backdrop_path
+                    }
+                    poster={
+                      "https://image.tmdb.org/t/p/w300" + item.poster_path
+                    }
+                    genre={get_genre("tv", item.genre_ids, 3)}
+                    id={item.id}
+                    mediaType="tv"
+                    date={item.first_air_date}
+                  />
+                </div>
               ))}
           </RT_Card_Detail>
         </section>

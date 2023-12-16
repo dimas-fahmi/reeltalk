@@ -1,0 +1,24 @@
+/* Movie Detail Layout Stylesheet */
+
+.movie-detail-layout#movieDetailLayout section#hero {
+  min-height: 480px;
+  max-height: 480px;
+  margin: auto;
+  background-color: red;
+
+  & .container {
+    background-color: blue;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  & .container .backdrop {
+    width: 100%;
+    height: 100%;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

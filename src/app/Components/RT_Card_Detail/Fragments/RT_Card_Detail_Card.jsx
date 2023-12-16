@@ -7,6 +7,9 @@ const RT_Card_Detail_Card = ({
   title,
   rating,
   genre,
+  mediaType,
+  id,
+  date,
 }) => {
   return (
     <div className={"rt-card " + className}>
@@ -23,16 +26,23 @@ const RT_Card_Detail_Card = ({
           <span className="genre quicksand">{genre}</span>
           <div className="mt-3">
             <a
-              href="#"
+              href={"/reeltalk/" + mediaType + "/?id=" + id}
               className="glass-morphism text-light text-decoration-none py-1 px-4 me-2"
             >
-              <i className="bi bi-play me-2"></i>Open
+              <i className="bi bi-play me-1"></i>Trailer
             </a>
             <a
-              href="#"
+              href={
+                "https://pahe.me/?s=" +
+                title +
+                (mediaType === "movie" && date
+                  ? "%20" + date.split("-")[0]
+                  : "")
+              }
+              target="blank"
               className="glass-morphism text-light text-decoration-none py-1 px-4"
             >
-              <i className="bi bi-download me-2"></i>Pahe
+              <i className="bi bi-download me-1"></i>Pahe
             </a>
           </div>
         </div>
