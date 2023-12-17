@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/reeltalk" element={<HomepageLayout />} />
-        <Route path="/reeltalk/movie" element={<MovieDetailLayout />}></Route>
+        <Route path="/reeltalk/movie/" element={<MovieDetailLayout />}></Route>
       </Routes>
     </BrowserRouter>
   );
