@@ -13,8 +13,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/reeltalk" element={<HomepageLayout />} />
-        <Route path="/reeltalk/movie" element={<MovieDetailLayout />}></Route>
+        <Route path="/" element={<HomepageLayout />} />
+        <Route path="/movie/" element={<MovieDetailLayout />}></Route>
       </Routes>
     </BrowserRouter>
   );

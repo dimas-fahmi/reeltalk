@@ -62,14 +62,11 @@ const HomepageLayout = () => {
         <section id="featurePosts">
           <div className="primus-container">
             <div className="backdrop">
-              <img src="/reeltalk/samurai-nobg.png" alt="Samurai" />
+              <img src="/samurai-nobg.png" alt="Samurai" />
             </div>
             <div className="body">
               <span className="first-label oswald d-block">MY FAVORITES</span>
-              <a
-                href="/reeltalk/post/all-my-favorites"
-                className="text-decoration-none"
-              >
+              <a href="/post/all-my-favorites" className="text-decoration-none">
                 <h4 className="rubik m-0 text-danger fw-bold">
                   THE BEST MOVIES OF ALL TIME
                 </h4>

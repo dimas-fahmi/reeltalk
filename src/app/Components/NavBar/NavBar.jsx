@@ -35,7 +35,7 @@ function NavBar() {
           <Navbar.Brand href="/" className="quicksand m-auto">
             <img
               className="navbar-reeltalk-logo"
-              src="/reeltalk/resources/logos/reeltalk-1-nobg.svg"
+              src="/resources/logos/reeltalk-1-nobg.svg"
               alt="ReelTalk Logo"
             />
           </Navbar.Brand>
